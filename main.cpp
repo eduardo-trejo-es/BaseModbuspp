@@ -2,6 +2,7 @@
 #include <iostream>
 
 int main() {
+    int A;
     try {
         // Initialisation du client Modbus
         ModbusTCPClient client("192.168.5.1", 502);
@@ -15,6 +16,8 @@ int main() {
         // Lecture du bit (coil) à l'adresse 10
         bool coilState = client.readCoil(900);
         std::cout << "Lecture réussie : Coil 10 est " << (coilState ? "ON" : "OFF") << ".\n";
+
+        std::cin >> A;
 
     } catch (const std::exception& ex) {
         std::cerr << "Erreur : " << ex.what() << "\n";
