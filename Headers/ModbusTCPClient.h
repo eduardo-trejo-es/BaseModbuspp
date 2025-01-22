@@ -14,10 +14,20 @@ public:
 
     void connect();
     std::vector<uint16_t> readRegisters(int address, int numRegisters);
-    void writeRegister(int address, uint16_t value);
+    void writeRegister(int address, uint16_t value); // Écrire un seul registre
+    void writeRegisters(int address, const std::vector<uint16_t>& values); // Écrire plusieurs registres
+
+
 
     void writeCoil(int address, bool value); // Écriture d'un bit (coil)
     bool readCoil(int address); // Lecture d'un bit (coil)
+
+    void writeInt16(int address, int16_t value);        // Écrire un entier 16 bits
+    int16_t readInt16(int address);                    // Lire un entier 16 bits
+
+    void writeFloat32(int address, float value);       // Écrire un flottant 32 bits
+    float readFloat32(int address);                    // Lire un flottant 32 bits
+
 
 
 private:
