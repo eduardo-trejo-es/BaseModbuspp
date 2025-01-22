@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build libmodbus project",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-o", "${workspaceFolder}/${fileBasenameNoExtension}.exe",   // Fichier de sortie
+        "${file}",                              // Fichier principal
+        "${workspaceFolder}/ModbusTCPClient.cpp",                   // Implémentation des fonctions
+        "-I", "${workspaceFolder}/Headers",                         // Inclure les headers
+        "-lws2_32",                                                 // Lier la bibliothèque Winsock pour Windows
+        "-Wall",                                                    // Afficher les avertissements
+        "-std=c++17"                                                // Utiliser le standard C++17
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
