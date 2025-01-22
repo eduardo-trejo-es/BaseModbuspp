@@ -4,16 +4,16 @@
 int main() {
     try {
         // Initialisation du client Modbus
-        ModbusTCPClient client("192.168.5.13", 502);
+        ModbusTCPClient client("192.168.5.1", 502);
         client.connect();
         std::cout << "Connexion réussie au serveur Modbus\n";
 
         // Écriture d'un bit (coil) à l'adresse 10
-        client.writeCoil(10, true);
+        client.writeCoil(90, true);
         std::cout << "Écriture réussie : Coil 10 mis à ON.\n";
 
         // Lecture du bit (coil) à l'adresse 10
-        bool coilState = client.readCoil(10);
+        bool coilState = client.readCoil(900);
         std::cout << "Lecture réussie : Coil 10 est " << (coilState ? "ON" : "OFF") << ".\n";
 
     } catch (const std::exception& ex) {
