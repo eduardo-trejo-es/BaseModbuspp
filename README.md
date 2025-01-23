@@ -11,4 +11,4 @@ Sending and receiving data: Requests are sent via send(), and responses are rece
 Response analysis: The response is validated to ensure that it conforms to the Modbus protocol.
 
 
-Open the project in Vs code and tap Ctrl+Shift+B to build, the all config to build up is done on task.json file 
+Open the project in Vs code and tap Ctrl+Shift+B to build up, the all config to build up is done on task.json file 
